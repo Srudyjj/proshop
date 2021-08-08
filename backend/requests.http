@@ -12,6 +12,18 @@ Content-Type: application/json
 GET http://localhost:5000/api/users/profile
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+@authToken = {{login.response.body.token}}
+PUT http://localhost:5000/api/users/profile
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "name": "Steve Smith",
+    "email": "steve@gmail.com",
+    "password": 123456
+}
 ###
 POST http://localhost:5000/api/users
 Content-Type: application/json
